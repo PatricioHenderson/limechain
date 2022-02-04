@@ -10,6 +10,7 @@ contract LibraryFactory is Ownable {
         string name;
         string author;
         uint16 stock;
+        uint id;
     }
 
     Book[] public books;
@@ -22,8 +23,8 @@ contract LibraryFactory is Ownable {
     function addNewBook(string memory _name, string memory _author, uint16 _stock) internal  {
         require(verifyAdministrator(msg.sender));
         require(_stock > 0);
-        books.push(Book(_name, _author, _stock));
         uint id = books.length - 1;
+        books.push(Book(_name, _author, _stock, id));
         emit NewBook(_name, _author, _stock);
         
     }
