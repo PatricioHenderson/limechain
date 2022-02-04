@@ -29,6 +29,9 @@ contract LibraryRent is LibraryFactory {
     function GetBook(uint16 _id) public view returns (string memory) {
         return books[_id].name;
     }
+        function getBookRenter(uint16 _id) public view returns (address) {
+        return bookToRenter[_id];
+    }
 
     
 }
