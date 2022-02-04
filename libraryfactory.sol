@@ -35,7 +35,7 @@ contract LibraryFactory is Ownable {
         }
     }
     
-    function getBook(uint16 _id) external view returns (string memory, string memory, uint16) {
+    function getBookComplete(uint16 _id) external view returns (string memory, string memory, uint16) {
         return (books[_id].name, books[_id].author, books[_id].stock);
     }
 
